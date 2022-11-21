@@ -34,3 +34,10 @@ module.exports = router;
 router.get('/student-courses', controller.getStudentCourses);
 
 router.get('/student-courses/details', controller.getStudentCourseDetails);
+
+router.get(
+	'/student-courses/student-details',
+	controller.getStudentCourseStudentDetails
+);
+
+router.post('/student-courses', controller.postStudentCourses);
