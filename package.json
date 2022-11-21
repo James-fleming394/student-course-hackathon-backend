@@ -1,0 +1,28 @@
+{
+  "name": "student-course-hackathon-backend",
+  "version": "1.0.0",
+  "description": "## Date: 11/18/2022",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/James-fleming394/student-course-hackathon-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/James-fleming394/student-course-hackathon-backend/issues"
+  },
+  "homepage": "https://github.com/James-fleming394/student-course-hackathon-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "pg": "^8.8.0",
+    "sequelize": "^6.25.7"
+  }
+}
