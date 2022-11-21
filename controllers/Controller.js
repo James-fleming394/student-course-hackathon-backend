@@ -39,14 +39,13 @@ const createStudent = async (req, res) => {
 //Grades
 
 const getGrade = async (req, res) => {
-    try {
-        const grades = await Grade.findAll()
-        res.send(grades)
-    } catch (error) {
-        res.status(500).send({ status: 'Error', msg: error.message })
-    }
-}
-
+	try {
+		const grades = await Grade.findAll();
+		res.send(grades);
+	} catch (error) {
+		res.status(500).send({ status: 'Error', msg: error.message });
+	}
+};
 
 const getStudentGrade = async (req, res) => {
 	try {
@@ -126,6 +125,36 @@ const getStudentCourseDetails = async (req, res) => {
 	}
 };
 
+const getStudentCourseStudentDetails = async (req, res) => {
+	try {
+		const studentCourseDetails = await Student.findAll({
+			include: [
+				{
+					model: Course,
+					as: 'enrolled_courses',
+					through: { attributes: [] }
+				}
+			]
+		});
+		res.send(studentCourseDetails);
+	} catch (error) {
+		res.status(500).send({ status: 'Error', msg: error.message });
+	}
+};
+
+const postStudentCourses = async (req, res) => {
+	try {
+		const { studentId, courseId } = req.body;
+		const studentCourse = await db.sequelize.query(
+			`INSERT INTO "studentcourses" ("studentId","courseId","createdAt","updatedAt") VALUES (${studentId},${courseId},current_timestamp,current_timestamp) RETURNING "studentId","courseId","createdAt","updatedAt","id";`,
+			{ type: sequelize.QueryTypes.INSERT }
+		);
+		res.send(studentCourse);
+	} catch (error) {
+		res.status(500).send({ status: 'Error', msg: error.message });
+	}
+};
+
 module.exports = {
 	getStudent,
 	getOneStudent,
@@ -137,5 +166,7 @@ module.exports = {
 	getOneCourse,
 	createCourse,
 	getStudentCourses,
-	getStudentCourseDetails
+	getStudentCourseDetails,
+	getStudentCourseStudentDetails,
+	postStudentCourses
 };
