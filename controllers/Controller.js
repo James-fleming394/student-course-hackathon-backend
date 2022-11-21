@@ -34,7 +34,7 @@ const createStudent = async (req, res) => {
 
 const getGrade = async (req, res) => {
     try {
-        const grades = await Grades.findAll()
+        const grades = await Grade.findAll()
         res.send(grades)
     } catch (error) {
         res.status(500).send({ status: 'Error', msg: error.message })
