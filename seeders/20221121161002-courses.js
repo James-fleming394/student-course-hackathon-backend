@@ -8,19 +8,27 @@ module.exports = {
       [
         {
           name: 'Math',
-          grade: 2
+          grade: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           name: 'Science',
-          grade: 2
+          grade: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           name: 'English',
-          grade: 2
+          grade: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           name: 'History',
-          grade: 2
+          grade: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}
