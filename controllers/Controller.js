@@ -39,13 +39,14 @@ const createStudent = async (req, res) => {
 //Grades
 
 const getGrade = async (req, res) => {
-	try {
-		const grades = await Grades.findAll();
-		res.send(grades);
-	} catch (error) {
-		res.status(500).send({ status: 'Error', msg: error.message });
-	}
-};
+    try {
+        const grades = await Grade.findAll()
+        res.send(grades)
+    } catch (error) {
+        res.status(500).send({ status: 'Error', msg: error.message })
+    }
+}
+
 
 const getStudentGrade = async (req, res) => {
 	try {
