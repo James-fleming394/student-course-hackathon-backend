@@ -109,6 +109,23 @@ const getStudentCourses = async (req, res) => {
 	}
 };
 
+const getStudentCourseDetails = async (req, res) => {
+	try {
+		const studentCourseDetails = await Course.findAll({
+			include: [
+				{
+					model: Student,
+					as: 'student_courses',
+					through: { attributes: [] }
+				}
+			]
+		});
+		res.send(studentCourseDetails);
+	} catch (error) {
+		res.status(500).send({ status: 'Error', msg: error.message });
+	}
+};
+
 module.exports = {
 	getStudent,
 	getOneStudent,
@@ -119,5 +136,6 @@ module.exports = {
 	getCourse,
 	getOneCourse,
 	createCourse,
-	getStudentCourses
+	getStudentCourses,
+	getStudentCourseDetails
 };

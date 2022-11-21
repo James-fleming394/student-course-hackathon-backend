@@ -32,3 +32,5 @@ module.exports = router;
 // Student Courses
 
 router.get('/student-courses', controller.getStudentCourses);
+
+router.get('/student-courses/details', controller.getStudentCourseDetails);
