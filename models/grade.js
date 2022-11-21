@@ -8,13 +8,20 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Grade.belongsTo(models.StudentCourse, { foreignKey: 'studentcourseId' })
     }
   }
   Grade.init(
     {
       score: DataTypes.INTEGER,
-      letter: DataTypes.STRING
+      letter: DataTypes.STRING,
+      studentCourseId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'studentcourses',
+          key: 'id'
+        }
+      }
     },
     {
       sequelize,
