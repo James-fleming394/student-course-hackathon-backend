@@ -27,8 +27,6 @@ router.get('/grades/:student_id', controller.getStudentGrade);
 
 router.post('/grades/:student_id/new', controller.createGrade);
 
-module.exports = router;
-
 // Student Courses
 
 router.get('/student-courses', controller.getStudentCourses);
@@ -41,3 +39,5 @@ router.get(
 );
 
 router.post('/student-courses', controller.postStudentCourses);
+
+module.exports = router;
