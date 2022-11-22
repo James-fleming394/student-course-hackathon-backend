@@ -44,18 +44,10 @@ This app allows a user to view a list of students and courses they're enrolled i
 
 A trello board used to keep track of development progress can be [viewed here](https://trello.com/b/1qiVnuLP/student-course-hackaton).
 
-The project itself was deployed and can be [viewed here]().
-
----
-
-### **_Screenshots_**
-
-#### TBD
-
-![TBD]()
+The project itself was deployed and can be [viewed here](https://green-tree-school.herokuapp.com/).
 
 ---
 
 ### **_Future Updates_**
 
--   [ ] TBD
+-   [ ] Add full CRUD for students
